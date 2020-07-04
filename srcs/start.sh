@@ -3,7 +3,7 @@
 ./etc/init.d/mysql start
 
 #setup phpMyAdmin
-mysql < /var/www/phpmyadmin/sql/create_tables.sql -u root
+mysql < /var/www/phpMyAdmin/sql/create_tables.sql -u root
 echo "GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'pma'@'localhost' IDENTIFIED BY 'pmapass';'" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
