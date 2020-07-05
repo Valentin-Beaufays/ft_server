@@ -2,10 +2,15 @@ FROM debian:buster
 
 ENV pma_filename phpMyAdmin-5.0.2-all-languages
 ENV wP_filename wordpress-5.4.2-fr_FR
+ENV auto_index true
 
 # Install and update tools
 RUN apt-get update
 RUN apt-get install -y nginx mariadb-server php7.3 php7.3-fpm php7.3-mysql php-json php-mbstring openssl
+
+#config index
+ADD ./srcs/nginx.conf ./
+RUN if [ "${auto_index}" = "true" ] ; then rm etc/nginx/nginx.conf && mv ./nginx.conf ./etc/nginx/ ; else rm nginx.conf ; fi
 
 # Install phpMyAdmin
 ADD ./srcs/phpMyAdmin.conf ./etc/nginx/sites-available/
@@ -30,3 +35,4 @@ ADD ./srcs/start.sh ./
 CMD ./start.sh
 
 EXPOSE 80
+EXPOSE 443
