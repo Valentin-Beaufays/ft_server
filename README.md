@@ -2,7 +2,7 @@
 ft_server project from school 42
 
 ## Subject
-Create a Dockerfile to setup a server 
+Setup a webserver using Docker
 
 ## Technos
 * Docker
