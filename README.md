@@ -14,7 +14,7 @@ Setup a webserver using Docker
 
 ## Setup
 
-If you want, you can disable the auto index of the files by changing the ```env auto_index``` to false
+If you want, you can disable the auto index of the files by changing the ```env auto_index``` to false in the Dockerfile
 
 Run:
 
@@ -27,18 +27,4 @@ You can disable the auto index of the files by changing the ```env auto_index```
 run ```docker rm --force fs``` to stop and delete the container
 
 ## Warning
-* because of the self-generated ssl certificate some browsers can blacklist the pages
-* To be able to display the wordpress and the phpmyadmin you must access them with their respective domain (wordpress.be and phpmyadmin.be)
-I'm working on an easy way to do it locally but for now you must add these lines to your operating system's hosts file:
-
- ```127.0.0.1	phpmyadmin.be```
-
- ```127.0.0.1	wordpress.be```
-
- On Windows: 
-
- ```C:\Windows\System32\drivers\etc\hosts```
-
- On Linux:
-
- ```/etc/hosts```
+* because of the self-generated ssl certificate some browsers can blacklist the pages and show a warning
