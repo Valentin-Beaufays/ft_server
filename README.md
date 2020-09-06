@@ -26,5 +26,10 @@ You can disable the auto index of the files by changing the ```env auto_index```
 
 run ```docker rm --force fs``` to stop and delete the container
 
+## Use
+
+You can access the wordpress using [localhost](http://localhost) and phpMyAdmin with [localhost/phpmyadmin](http://localhost/phpmyadmin)
+
 ## Warning
 * because of the self-generated ssl certificate some browsers can blacklist the pages and show a warning
+* Make sure that you are using Unix style line break (LF)
